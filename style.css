@@ -1,0 +1,22 @@
+.web-dev {
+  text-align: center;
+  font-size: 15px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.my-name {
+  text-align: center;
+  font-size: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+
+li {
+  text-align: center;
+  font-size: 15px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  list-style-type: none;
+}

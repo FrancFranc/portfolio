@@ -1,24 +1,42 @@
-var lab = [];
 
-function labImages (rawDataObj) {
+ // create an array called 'lab'
+var labs = [];
 
-  this.title = rawDataObj.title;
+// create an object called labImages
+function Lab (rawDataObj) {
   this.backgroundImage = rawDataObj.backgroundImage;
-  this.icon = rawDataObj.icon;
+  this.title = rawDataObj.title;
+  this.year = rawDataObj.year;
+  this.description = rawDataObj.description;
+  this.labURL = rawDataObj.labURL;
 }
 
-labImages.prototype.toHTML = function() {
-  var $newLab = $('.lab-images-set').clone();
-  $newLab.find('.lab-each-image').html(this.backgroundImage);
+//
+Lab.prototype.toHTML = function() {
+  var $newLab = $('.template.lab-image').clone();
+  $newLab.css('background-image', `url("${this.backgroundImage}")`);
   $newLab.find('h1').html(this.title);
-  $newLab.find('click-icon').html(this.icon);
+  $newLab.removeClass('template');
   return $newLab;
 }
 
-labImagesArray.forEach(function(labImageObject) {
-  lab.push(new labImages(labImageObject));
+// push the new object "labImages" into the array "lab"
+// the parameter is the object in labImagesArray
+labData.forEach(function(labImageObject) {
+  labs.push(new Lab(labImageObject));
 });
 
-lab.forEach(function(labImageObject) {
-  $('lab-images-set').append(labImageObject.toHTML());
+labs.forEach(function(labImageObject) {
+  $('.lab-each-image').append(labImageObject.toHTML());
 });
+
+
+// tabs
+$(document).ready(function() {
+  $('.tab').on('click', function() {
+    var $whereToGo = $(this).data('content')
+    $('.tab-content').hide()
+    $(`#${$whereToGo}`).fadeIn(500);
+  })
+  $('.tab-nav .tab:first').click();
+})

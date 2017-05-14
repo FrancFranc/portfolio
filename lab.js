@@ -2,7 +2,7 @@
  // create an array called 'lab'
 var labs = [];
 
-// create an object called labImages
+// create an object called "lab", passing the parameter called "rawDataObj"
 function Lab (rawDataObj) {
   this.backgroundImage = rawDataObj.backgroundImage;
   this.title = rawDataObj.title;
@@ -11,7 +11,7 @@ function Lab (rawDataObj) {
   this.labURL = rawDataObj.labURL;
 }
 
-//
+// create a method, which is a prototype of the above constructor "Lab"
 Lab.prototype.toHTML = function() {
   var $newLab = $('.template.lab-image').clone();
   $newLab.css('background-image', `url("${this.backgroundImage}")`);

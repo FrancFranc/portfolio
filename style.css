@@ -1,4 +1,7 @@
-/*GENERAL*/
+/* ----------------------------------------------------
+                         GENERAL
+-------------------------------------------------------*/
+
 *	{
   width : 100%;
   /*height: 100%;*/
@@ -15,12 +18,12 @@ body {
 }
 
 .background-one {
-  /*background-image: url("img/orchid-blur.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat;*/
+  background-image: url("img/orchid-blur-2-1.jpg");
+  background-size: auto 100%;
+  background-repeat: no-repeat;
   height: 100%;
   position: absolute;
-  opacity: 0.4;
+  opacity: 0.5;
   z-index: 2;
 }
 
@@ -34,14 +37,28 @@ body {
 }
 
 h2 {
+  background-color: white;
+  opacity: 0.6;
   height: 20%;
   padding: 1%;
   text-align: center;
-  font-size: 30px;
+  text-shadow: 1px 1px 2px black;
+  font-family: 'Miss Fajardose', cursive;
+  font-size: 80px;
   color: black;
 }
 
-/*SECTION -- HOMEPAGE*/
+.sub-content {
+  height:60%;
+  background-color: white;
+  opacity: 0.6;
+
+}
+
+
+/* ----------------------------------------------------
+                  SECTION -- HOMEPAGE
+-------------------------------------------------------*/
 
 #homepage {
   background-image: url("img/orchid.jpg");
@@ -69,8 +86,10 @@ h1 {
 }
 
 
+/* ----------------------------------------------------
+                 SECTION -- ABOUT ME
+-------------------------------------------------------*/
 
-/*SECTION -- ABOUT ME*/
 section#about-me p {
   height: 85%;
   color: black;
@@ -79,7 +98,9 @@ section#about-me p {
 }
 
 
-/*SECTION -- all LABS*/
+/* ----------------------------------------------------
+                  SECTION -- all LABS
+-------------------------------------------------------*/
 
 div#lab-images h1 {
   font-size: 30px;
@@ -90,7 +111,10 @@ div#lab-images h1 {
   height:20px;
 }
 
-/*SECTION -- CONTACTS*/
+
+/* ----------------------------------------------------
+                  SECTION -- CONTACTS
+-------------------------------------------------------*/
 
 section#contact {
   text-align: center;
@@ -103,7 +127,9 @@ section#contact img {
 }
 
 
-/*NAV BAR*/
+/* ----------------------------------------------------
+                       NAV BAR
+-------------------------------------------------------*/
 
 .tab-nav {
   height: 20%;

@@ -1,7 +1,7 @@
 /*GENERAL*/
 *	{
   width : 100%;
-  height: 100%;
+  /*height: 100%;*/
   padding : 0;
   margin:  0;
   box-sizing: border-box;
@@ -9,16 +9,18 @@
 }
 
 body {
-  background-color: black;
+  background-color: white;
   height: inherit;
   z-index: 1;
 }
 
 .background-one {
-  background-image: url("img/Body-1.jpg");
+  /*background-image: url("img/orchid-blur.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;*/
   height: 100%;
   position: absolute;
-  opacity: 0.5;
+  opacity: 0.4;
   z-index: 2;
 }
 
@@ -31,9 +33,23 @@ body {
   z-index: 4;
 }
 
+h2 {
+  height: 20%;
+  padding: 1%;
+  text-align: center;
+  font-size: 30px;
+  color: black;
+}
+
 /*SECTION -- HOMEPAGE*/
 
-h2 {
+#homepage {
+  background-image: url("img/orchid.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+h3 {
   height: 20%;
   padding: 1%;
   text-align: center;
@@ -48,15 +64,16 @@ h1 {
   text-align: center;
   text-shadow: 1px 1px 2px black;
   font-family: 'Miss Fajardose', cursive;
-  font-size: 100px;
+  font-size: 130px;
   color: white;
 }
 
 
+
 /*SECTION -- ABOUT ME*/
-p {
+section#about-me p {
   height: 85%;
-  color: white;
+  color: black;
   line-height: 1em;
   word-spacing: 0.5em;
 }
@@ -64,11 +81,26 @@ p {
 
 /*SECTION -- all LABS*/
 
+div#lab-images h1 {
+  font-size: 30px;
+}
+
 .fa-search-plus {
   width:20px;
   height:20px;
 }
 
+/*SECTION -- CONTACTS*/
+
+section#contact {
+  text-align: center;
+}
+
+section#contact img {
+  width: 60px;
+  height: 60px;
+
+}
 
 
 /*NAV BAR*/

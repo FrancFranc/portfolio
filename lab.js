@@ -1,42 +1,72 @@
 
- // create an array called 'lab'
-var labs = [];
+/*-------------------------------------------------------
+Handlebars for ALL Labs (script id="image-template-set")
+---------------------------------------------------------*/
 
-// create an object called "lab", passing the parameter called "rawDataObj"
-function Lab (rawDataObj) {
-  this.backgroundImage = rawDataObj.backgroundImage;
-  this.title = rawDataObj.title;
-  this.year = rawDataObj.year;
-  this.description = rawDataObj.description;
-  this.labURL = rawDataObj.labURL;
+var labImagesArray = [];
+
+//This is another way to use a constructor to duplicate an array of raw data objects
+function LabImages (rawDataObj) {
+  for (key in rawDataObj) {         //key is a built-in javascript, assign this key into rawDataObj
+    this[key] = rawDataObj[key];    // key have different values, and get the key values
+  }
+};
+
+//This method on each instance of Labs allows that object to create its own HTML
+LabImages.prototype.toHTML = function() {
+  var template = $('#lab-template-images').html();         //Get the template from HTML document
+  var templateRender = Handlebars.compile(template);  //Use Handlebars to compile the HTML
+  return templateRender(this);                        //return the HTML from this method
 }
 
-// create a method, which is a prototype of the above constructor "Lab"
-Lab.prototype.toHTML = function() {
-  var $newLab = $('.template.lab-image').clone();
-  $newLab.css('background-image', `url("${this.backgroundImage}")`);
-  $newLab.find('h1').html(this.title);
-  $newLab.removeClass('template');
-  return $newLab;
-}
-
-// push the new object "labImages" into the array "lab"
-// the parameter is the object in labImagesArray
 labData.forEach(function(labImageObject) {
-  labs.push(new Lab(labImageObject));
+  labImagesArray.push(new LabImages(labImageObject));
 });
 
-labs.forEach(function(labImageObject) {
-  $('.lab-each-image').append(labImageObject.toHTML());
+labImagesArray.forEach(function(labImageObject) {
+  $('#all-labs').append(labImageObject.toHTML());
 });
 
 
-// tabs
-$(document).ready(function() {
-  $('.tab').on('click', function() {
-    var $whereToGo = $(this).data('content')
-    $('.tab-content').hide()
-    $(`#${$whereToGo}`).fadeIn(500);
-  })
-  $('.tab-nav .tab:first').click();
+
+/*----------------------------------------------------------
+Handlebars for EACH Labs (script id="lab-template-content")
+------------------------------------------------------------*/
+
+var labContentArray = [];
+
+function LabContent (rawDataObj) {
+  for (key in rawDataObj) {
+    this[key] = rawDataObj[key];
+  }
+}
+
+LabContent.prototype.toHTML = function() {
+  var template = $('#lab-template-content').html();
+  var templateRender = Handlebars.compile(template);
+  return templateRender(this);
+}
+
+labData.forEach(function(labImageObject) {
+  labContentArray.push(new LabContent(labImageObject));
+});
+
+labContentArray.forEach(function(labImageObject) {
+  $('#lab-individuals').append(labImageObject.toHTML());
+});
+
+
+
+/*----------------------------------------------------------
+                          Tabs
+------------------------------------------------------------*/
+
+$('a').on('click', function() {
+  var $whereToGo = $(this).data('tab')
+  console.log($whereToGo);
+  $('.tab-content').hide()
+  $(`#${$whereToGo}`).fadeIn(500);
 })
+
+
+// opening the lab on its own tab (when I click on the lab image)

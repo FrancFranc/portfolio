@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<head>
+
+  <title> </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Allura|Great+Vibes|Miss+Fajardose|Monsieur+La+Doulaise|Parisienne|Satisfy" rel="stylesheet">
+
+  <script id="lab-template-images" type="text/x-handlebars-template">
+    <div class="sub-content lab-images">
+      <h3>{{title}}</h3>
+      <a href='{{labURL}}'>
+        <img class='thumb' src='{{labImage}}' />
+      </a>
+    </div>
+  </script>
+
+  <script id="lab-template-content" type="text/x-handlebars-template">
+    <div id="each-lab" class="sub-content">
+      <div>
+        <img class="lab-image"/>
+      </div>
+      <div>
+        <p class="title">{{title}}</p>
+        <p class="year">{{year}}</p>
+        <p class="description">{{description}}</p>
+        <p class="lab-url">{{labURL}}</p>
+      </div>
+    </div>
+  </script>
+
+
+</head>
+
+<body>
+
+<!-- MAIN contains all sections and Nav Bar -->
+  <main>
+
+    <div class="background-one"></div>
+
+<!-- section for HOMEPAGE -->
+    <section id="homepage" class="tab-content">
+        <h3> Web Developer </h3>
+        <h1> Evette Cheung </h1>
+    </section>
+
+<!-- section for ABOUT ME -->
+    <section id="about-me" class="tab-content">
+      <div class="sub-content">
+        <p>
+        xxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxx
+        </p>
+      </div>
+    </section>
+
+<!-- section for all LABS -->
+    <section id="all-labs" class="tab-content"></section>
+
+<!-- section for individual LAB -->
+    <section id="lab-individuals" class="tab-content"></section>
+
+<!-- section for CONTACT -->
+    <section id="contact" class="tab-content">
+      <div class="sub-content">
+        <img src="img/email.png">
+        <img src="img/github.png">
+        <img src="img/linkedin.png">
+        <img src="img/twitter.png">
+        <img src="img/fb.png">
+      </div>
+    </section>
+
+<!-- FOOTER contains NAV BAR -->
+    <footer>
+      <nav class="tab-nav">
+        <ul>
+          <li class="tab"><a href="#" data-content="homepage"> Home </a></li>
+          <li class="tab"><a href="#" data-content="about-me"> About Me</a></li>
+          <li class="tab"><a href="#" data-content="all-labs"> Lab </a></li>
+          <li class="tab"><a href="#" data-content="contact"> Contact </a></li>
+        </ul>
+      </nav>
+    </footer>
+
+  </main>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Script Links -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+    <script type="text/javascript" src="labArray.js"></script>
+    <script type="text/javascript" src="lab.js"></script>
+
+</body>
+
+</html>

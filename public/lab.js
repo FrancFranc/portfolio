@@ -60,12 +60,23 @@ labContentArray.forEach(function(labImageObject) {
 /*----------------------------------------------------------
                           Tabs
 ------------------------------------------------------------*/
+$(() => {
+  $('.tab-content').hide();
+  $('#homepage').show();
+})
 
 $('a').on('click', function() {
-  var $whereToGo = $(this).data('tab')
+  var $whereToGo = $(this).data('content')
   console.log($whereToGo);
   $('.tab-content').hide()
   $(`#${$whereToGo}`).fadeIn(500);
+  if ($whereToGo==='homepage') {
+    $('.tab-nav').show();
+    $(this.parentNode.parentNode.parentNode.parentNode).hide();
+  }
+  else {
+    $('.tab-nav').hide();
+  }
 })
 
 
